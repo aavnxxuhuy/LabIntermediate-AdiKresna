@@ -8,7 +8,7 @@ def main_lagi():
   while True:
     main_lagi = input("Apakah ada ingin bermain lagi (y/n)? ").lower()
     if main_lagi == "y":
-      hangman(secretWord, 6)  
+      hangman(secretWord)  
     elif main_lagi == "n":
       print("Terima kasih telah bermain")
       break
@@ -29,10 +29,11 @@ def display(tebakan,kataRahasia, tebakan_baru):
   return update
 
 #fungsi permainan hangman dan logika berjalannya
-def hangman(kataRahasia, nyawa):
+def hangman(kataRahasia):
   tebakan_baru = "_" * len(kataRahasia)
   huruf_sementara = []
   ngulang = 0
+  nyawa = 6
 
   #jika masih ada kesempatan maka akan terus berjalan
   while nyawa > 0:
